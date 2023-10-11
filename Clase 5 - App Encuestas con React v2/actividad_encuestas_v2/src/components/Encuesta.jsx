@@ -1,12 +1,12 @@
-import { useParams, Link} from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
-const Encuesta = ({listaEncuestas, responderEncuesta}) => {
-    const{id} = useParams(); //obtiene el ID de la encuesta desde la URL
+const Encuesta = ({ listaEncuestas, responderEncuesta }) => {
+    const { id } = useParams(); //obtiene el ID de la encuesta desde la URL
     console.log(listaEncuestas);
     const encuesta = listaEncuestas.find((enc) => enc.id === parseInt(id));
     console.log("Preguntas: " + encuesta.preguntas);
 
-    return(
+    return (
         <div >
             <div className="encuesta-item-conteiner">
                 <div className="encuesta-item">
@@ -20,21 +20,22 @@ const Encuesta = ({listaEncuestas, responderEncuesta}) => {
                     <h2>Preguntas</h2>
                     <p>
                         {!encuesta.preguntas && <p>Sin preguntas definidas</p>}
-                    {encuesta.preguntas && encuesta.preguntas.map((pregunta) => (
-                        <div key={pregunta.id}>
-                            <p>{pregunta.pregunta}</p>
-                            <ol>
-                                {pregunta.opciones.map((opcion) => (
-                                    <div key={opcion.id}>
-                                        <label>
-                                            <li>{opcion.texto}</li>
-                                        </label>
-                                    </div>
-                                ))}
-                            </ol>
-                        </div>
-                    ))}
-                    </p>
+                        {encuesta.preguntas &&
+                            encuesta.preguntas.map((pregunta) => (
+                                <div key={pregunta.id}>
+                                    <p>{pregunta.pregunta}</p>
+                                    <ol>
+                                        {pregunta.opciones.map((opcion) => (
+                                            <div key={opcion.id}>
+                                                <label>
+                                                    <li>{opcion.texto}</li>
+                                                </label>
+                                            </div>
+                                        ))}
+                                    </ol>
+                                </div>
+                            ))}
+                        </p>
                     <br />
                 </div>
             </div>

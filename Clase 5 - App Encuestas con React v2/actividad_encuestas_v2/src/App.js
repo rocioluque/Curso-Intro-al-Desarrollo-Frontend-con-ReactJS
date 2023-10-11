@@ -10,13 +10,15 @@ import encuestas from './data/encuestas.json';
 
 function App() {
 
-  const [listaEncuestas, setListaEncuestas] = useState(encuestas);
-  const agregarEncuestas = (nuevaEncuesta) => {
-    nuevaEncuesta.id = listaEncuestas.lenght +1
+  const [listaEncuestas, setListaEncuestas] = 
+    useState(encuestas);
+  const agregarEncuesta = (nuevaEncuesta) => {
+    nuevaEncuesta.id = listaEncuestas.length +1
     setListaEncuestas([...listaEncuestas, nuevaEncuesta]);
   };
-  const respondrEncuesta = (id, respuestas) => {
-    const encuesta = listaEncuestas.find(enc => enc.id === parseInt(id));
+  const responderEncuesta = (id, respuestas) => {
+    const encuesta = listaEncuestas.find(enc => enc.id === 
+      parseInt(id));
     encuesta.respuestas = [respuestas];
   };
 
@@ -24,9 +26,13 @@ function App() {
     <BrowserRouter>
       <Menu></Menu>
       <Routes>
-        <Route path="/" element={<Inicio listaEncuestas={listaEncuestas}/>}></Route>
-        <Route path="/encuesta/crear" element={<CrearEncuesta agregarEncuesta={agregarEncuestas}/>}></Route>
-        <Route path="/encuesta/:id" element={<Encuesta listaEncuestas={listaEncuestas} responderEncuesta={respondrEncuesta}/>}></Route>
+        <Route path="/" element={<Inicio 
+        listaEncuestas={listaEncuestas}/>}></Route>
+        <Route path="/encuesta/crear" element={<CrearEncuesta
+        agregarEncuesta={agregarEncuesta}/>}></Route>
+        <Route path="/encuesta/:id" element={<Encuesta 
+        listaEncuestas={listaEncuestas} 
+        responderEncuesta={responderEncuesta}/>}></Route>
         <Route path="*" element={<NotFound/>}></Route>
       </Routes>
     </BrowserRouter>

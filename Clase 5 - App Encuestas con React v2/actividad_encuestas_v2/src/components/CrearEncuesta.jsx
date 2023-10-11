@@ -2,11 +2,15 @@ import React from "react";
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-const CrearEncuesta = ({ agregarEncuesta }) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+const CrearEncuesta = ({ agregarEncuesta}) => {
+    const { 
+        register, 
+        handleSubmit, 
+        formState: { errors },
+    } = useForm();
     const navigate = useNavigate();
     const onSubmit = (data) => {
-        agregarEncuesta(data)
+        agregarEncuesta(data);
         navigate('/');
     };
 
@@ -21,7 +25,10 @@ const CrearEncuesta = ({ agregarEncuesta }) => {
                     name="titulo"
                     {...register("titulo", {
                         required: 'Este campo es obligatorio',
-                        maxLength: { value: 50, message: 'El título debe tener menos de 50 caracteres' }
+                        maxLength: { 
+                            value: 50, 
+                            message: 'El título debe tener menos de 50 caracteres',
+                        },
                     })}
                 />
                 {errors.titulo && <p>{errors.titulo.message}</p>}
@@ -31,7 +38,10 @@ const CrearEncuesta = ({ agregarEncuesta }) => {
                     id="descripcion"
                     name="descripcion"
                     {...register("descripcion", {
-                        maxLength: { value: 200, message: 'La descripción debe tener menos de 200 caracteres' }
+                        maxLength: { 
+                            value: 200, 
+                            message: 'La descripción debe tener menos de 200 caracteres', 
+                        },
                     })}
                 />
                 {errors.descripcion && <p>{errors.descripcion.message}</p>}
