@@ -17,7 +17,7 @@ input[type="text"] {
     border: 1px solid #ccc; 
     border-radius: 5px; 
     margin: 20px; 
-    border: 1px solid black; 
+    
 } 
 
 button { 
@@ -27,7 +27,7 @@ button {
     border-radius: 5px; 
     color: white; 
     cursor: pointer; 
-    margin: 10px; 
+    margin: 5px; 
 } 
 
 ul { 
