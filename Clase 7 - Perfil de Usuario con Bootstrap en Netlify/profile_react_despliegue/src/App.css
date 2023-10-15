@@ -1,0 +1,87 @@
+/* Estilo general */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Encabezado (Header) */
+.navbar {
+  background-color: #f8f9fa;
+  padding: 10px;
+}
+
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #333;
+  font-weight: bold;
+}
+
+/* Página de inicio (Home) */
+h1 {
+  font-size: 32px;
+  color: #007bff;
+}
+
+/* Página de "Acerca de" (About) */
+.card {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+}
+
+.card-title {
+  font-size: 24px;
+}
+
+.card-text {
+  font-size: 16px;
+}
+
+/* Página de hobbies (Hobbies) */
+.list-group-item {
+  margin-top: 10px;
+}
+
+.list-group-item h3 {
+  font-size: 20px;
+  color: #007bff;
+}
+
+/* Página de contacto (Contact) */
+.form-group {
+  margin-top: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 100px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Página 404 (NotFound) */
+h2 {
+  font-size: 28px;
+  color: #dc3545;
+}
+
+/* Pie de página (Footer) */
+.bg-dark {
+  background-color: #343a40;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
