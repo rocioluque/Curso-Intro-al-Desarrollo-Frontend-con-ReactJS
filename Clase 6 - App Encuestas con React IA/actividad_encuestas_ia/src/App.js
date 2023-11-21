@@ -23,13 +23,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Menu/>
+      <Menu></Menu>
       <Routes>
-        <Route path="/" element={<Menu />} />
-        <Route path="/encuestas" element={<Inicio />} />
-        <Route path="/encuesta/crear" element={<CrearEncuesta agregarEncuesta={agregarEncuesta} />} />
-        <Route path="/encuesta/:id" element={<Encuesta listaEncuestas={listaEncuestas} responderEncuesta={responderEncuesta} />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<Inicio 
+        listaEncuestas={listaEncuestas}/>}></Route>
+        <Route path="/encuesta/crear" element={<CrearEncuesta
+        agregarEncuesta={agregarEncuesta}/>}></Route>
+        <Route path="/encuesta/:id" element={<Encuesta 
+        listaEncuestas={listaEncuestas} 
+        responderEncuesta={responderEncuesta}/>}></Route>
+        <Route path="*" element={<NotFound/>}></Route>
       </Routes>
     </BrowserRouter>
   );

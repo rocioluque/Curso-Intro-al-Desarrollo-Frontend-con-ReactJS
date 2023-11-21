@@ -1,13 +1,10 @@
 //Pagina para notificar que la ruta no existe
 
-import React from "react";
-import { Link } from "react-router-dom";
+const NotFound = () => (
+    <div>
+        <h2>Página no encontada </h2>
+        <p>Lo sentimos, la página que estas buscando no existe.</p>
+    </div>
+);
 
-export default function NotFound() {
-    return (
-        <div>
-            <h1>404</h1>
-            <Link to="/">Volver</Link>
-        </div>
-    );
-}
+export default NotFound;

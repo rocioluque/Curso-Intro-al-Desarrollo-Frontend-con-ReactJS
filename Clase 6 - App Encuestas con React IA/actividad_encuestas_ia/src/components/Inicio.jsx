@@ -3,18 +3,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Inicio() {
+const Inicio = ({listaEncuestas}) => {
+    console.log(listaEncuestas);
     return (
         <div>
-            <h1>Encuestas</h1>
-            <ul>
-                <li>
-                    <Link to="/encuestas/1">Encuesta 1</Link>
-                </li>
-                <li>
-                    <Link to="/encuestas/2">Encuesta 2</Link>
-                </li>
-            </ul>
+            <h1>Lista de Encuestas Disponibles</h1>
+            {listaEncuestas.map((encuesta) => (
+                <div className="encuesta-item-container">
+                    <div className="encuesta-item">
+                        <h2>{encuesta.titulo}</h2>
+                        <Link to={`/encuesta/${encuesta.id}`}>Ver encuesta</Link>
+                        <br />
+                    </div>
+                </div>
+            ))}
         </div>
     );
-}
+};
+
+export default Inicio;

@@ -1,12 +1,47 @@
 import { useParams, Link } from "react-router-dom";
 
-export default function Encuesta() {
-    const { id } = useParams();
+
+const Encuesta = ({ listaEncuestas, responderEncuesta }) => {
+    const { id } = useParams(); //obtiene el ID de la encuesta desde la URL
+    console.log(listaEncuestas);
+    const encuesta = listaEncuestas.find((enc) => enc.id === parseInt(id));
+    console.log("Preguntas: " + encuesta.preguntas);
 
     return (
-        <div>
-            <h1>Encuesta {id}</h1>
-            <Link to="/encuestas">Volver</Link>
+        <div >
+            <div className="encuesta-item-conteiner">
+                <div className="encuesta-item">
+                    <h2>{encuesta.titulo}</h2>
+                    <br />
+                </div>
+            </div>
+            <div className="encuesta-item-conteiner">
+                <div className="encuesta-item">
+                    <h2>Preguntas</h2>
+                    <p>
+                        {!encuesta.preguntas && <p>Sin preguntas definidas</p>}
+                        {encuesta.preguntas &&
+                            encuesta.preguntas.map((pregunta) => (
+                                <div key={pregunta.id}>
+                                    <p>{pregunta.pregunta}</p>
+                                    <ol>
+                                        {pregunta.opciones.map((opcion) => (
+                                            <div key={opcion.id}>
+                                                <label>
+                                                    <li>{opcion.texto}</li>
+                                                </label>
+                                            </div>
+                                        ))}
+                                    </ol>
+                                </div>
+                            ))}
+                        </p>
+                    <br />
+                </div>
+            </div>
+            <Link to="/">Volver</Link>
         </div>
-    )
-}
+    );
+};
+
+export default Encuesta;

@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Menu() {
+const Menu = () => {
     return (
-        <div>
-            <h1>Encuestas</h1>
+        <nav>
             <ul>
                 <li>
-                    <Link to="/encuestas/1">Encuesta 1</Link>
+                    <Link to="/">Inicio</Link>
                 </li>
                 <li>
-                    <Link to="/encuestas/2">Encuesta 2</Link>
+                    <Link to="/encuesta/crear">Crear Encuesta</Link>
                 </li>
             </ul>
-        </div>
+        </nav>
     );
-}
+};
+
+export default Menu;
